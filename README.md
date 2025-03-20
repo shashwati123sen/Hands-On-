@@ -1,54 +1,96 @@
-# React + TypeScript + Vite
+# HandsOn - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
+HandsOn is a community-driven social volunteering platform that connects individuals with meaningful social impact opportunities. This repository contains the **React.js frontend**, allowing users to:
 
-Currently, two official plugins are available:
+- Create and manage volunteer events
+- Browse and filter public event listings
+- Instantly register for events with a single click
+- Post and respond to community help requests
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features Implemented
 
-## Expanding the ESLint configuration
+### 1️⃣ Event Management
+- **Event Creation**: Users or organizations can create volunteer events by providing details such as title, description, date, time, location, and category.
+- **Event Listing & Filters**: Users can browse upcoming volunteer events and filter them by category, location, and availability.
+- **One-Click Registration**: Users can instantly join an event, which adds them to the attendee list.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2️⃣ Event & Post Differentiation
+- **Events**: Fixed time and date for participation.
+- **Community Help Posts**: Open-ended requests for ongoing support (e.g., "Need volunteers to tutor weekly").
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 3️⃣ Community Help Requests
+- **Users & Organizations can post requests for help** (e.g., “We need volunteers to distribute winter clothes to homeless people.”).
+- **Others can offer help** through comments or private messaging.
+- **Urgency Levels**: Requests can be marked as low, medium, or urgent to prioritize responses.
+- **Dynamic Help Request Board**: Community members can proactively offer assistance.
+
+## 🛠️ Tech Stack
+- **Frontend**: React.js (with React Router for navigation)
+- **State Management**: Context API / Redux (optional)
+- **Styling**: Tailwind CSS / Styled Components
+- **API Communication**: Axios (REST API calls)
+- **Authentication**: JWT-based authentication (if implemented)
+
+## 📂 Project Structure
+```
+frontend/
+│── public/
+│── src/
+│   ├── components/  # Reusable components
+│   ├── pages/        # Page components
+│   ├── services/     # API calls
+│   ├── context/      # State management (if used)
+│   ├── utils/        # Helper functions
+│   ├── App.js        # Main app component
+│   ├── index.js      # Entry point
+│── package.json
+│── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Setup & Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/yourusername/hands-on-frontend.git
+cd hands-on-frontend
 ```
+
+### 2️⃣ Install Dependencies
+```bash
+npm install  # or yarn install
+```
+
+### 3️⃣ Run the Development Server
+```bash
+npm start  # or yarn start
+```
+The application will be available at `http://localhost:3000/`.
+
+## 🚀 API Integration
+Ensure the backend API is running and update the API endpoints in the service files.
+
+Example API Configuration (`src/services/api.js`):
+```javascript
+import axios from 'axios';
+
+const API_BASE_URL = 'http://localhost:5000/api';
+
+export const fetchEvents = async () => {
+    return await axios.get(`${API_BASE_URL}/events`);
+};
+```
+
+## 📝 Contribution Guidelines
+1. **Fork** the repository.
+2. Create a **feature branch** (`feature/your-feature-name`).
+3. **Commit** your changes (`git commit -m 'Add new feature'`).
+4. **Push** to the branch (`git push origin feature/your-feature-name`).
+5. Submit a **Pull Request**.
+
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+🎯 **Happy Coding & Volunteering!** 🚀
