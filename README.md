@@ -32,21 +32,7 @@ HandsOn is a community-driven social volunteering platform that connects individ
 - **API Communication**: Axios (REST API calls)
 - **Authentication**: JWT-based authentication (if implemented)
 
-## 📂 Project Structure
-```
-frontend/
-│── public/
-│── src/
-│   ├── components/  # Reusable components
-│   ├── pages/        # Page components
-│   ├── services/     # API calls
-│   ├── context/      # State management (if used)
-│   ├── utils/        # Helper functions
-│   ├── App.js        # Main app component
-│   ├── index.js      # Entry point
-│── package.json
-│── README.md
-```
+
 
 ## 🔧 Setup & Installation
 
